@@ -63,10 +63,11 @@ gulp.task( "compile-sass", function() {
     task_streams;
 
   sass_options = {
-    sourcemap:     true,
-    style:         "expanded",
+    sourcemap    : true,
+    style        : "expanded",
     cacheLocation: "../.sass-cache",
-    quiet:         false
+    noCache      : true,
+    quiet        : false
   };
 
   task_streams = combine_streams(
