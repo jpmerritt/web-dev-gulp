@@ -99,7 +99,7 @@ gulp.task( "compile-sass", function() {
 
 gulp.task( 'watch', function () {
   gulp.watch( "./client-side/css/**", [ "compile-sass" ] );
-  gulp.watch(["test/**, front-server.js", "node_modules", "lib/*"], [ "run-tests" ] );
+  gulp.watch(["test/**", "front-server.js", "node_modules", "lib/*"], [ "run-tests" ] );
 });
 
 
