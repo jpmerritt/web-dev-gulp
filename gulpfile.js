@@ -67,7 +67,7 @@ gulp.task( "compile-sass", function() {
     style        : "expanded",
     cacheLocation: "../.sass-cache",
     noCache      : true,
-    quiet        : false
+    quiet        : true
   };
 
   task_streams = combine_streams(
@@ -86,8 +86,9 @@ gulp.task( "compile-sass", function() {
   );
 
   // handle stream errors
-  task_streams.on( "error", function( error ) {
+  task_streams.on( "error", function( err ) {
     console.log( "sass compile error" );
+    if (err) { console.log( err ) };
     growl( "sass compile error", { title: "error", image: "./client-side/public/images/growl-fail.png" } );
 
   } );
